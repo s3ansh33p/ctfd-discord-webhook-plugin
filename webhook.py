@@ -60,6 +60,7 @@ def load(app):
                         "user": sanitize(user.name),
                         "challenge": sanitize(challenge.name),
                         "challenge_slug": quote(challenge.name),
+                        "challenge_id": challenge.id,
                         "value": challenge.value,
                         "solves": num_solves,
                         "fsolves": ordinal(num_solves),

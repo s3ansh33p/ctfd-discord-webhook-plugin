@@ -12,7 +12,8 @@ def config(app):
     app.config['DISCORD_WEBHOOK_LIMIT'] = environ.get('DISCORD_WEBHOOK_LIMIT', '3')
 
     '''
-    Webhook flag submission format string. Valid vars: team, user, solves, fsolves (formatted solves), challenge, category, team_id, user_id, challenge_slug, value
+    Webhook flag submission format string. Valid vars: team, user, solves, fsolves (formatted solves), challenge, category, team_id, user_id, challenge_slug, challenge_id, value
+    Example: :trophy:  [{user}](https://<website>/users/{user_id}) from team [{team}](https://<website>/teams/{team_id}) is **{fsolves}** to solve [{challenge}](https://<website>/challenges#{challenge_slug}-{challenge_id}) ({category}) worth {value} points
     '''
     app.config['DISCORD_WEBHOOK_MESSAGE'] = environ.get('DISCORD_WEBHOOK_MESSAGE', 'Congratulations to team {team} for the {fsolves} solve on challenge {challenge}!')
 
